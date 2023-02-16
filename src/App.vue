@@ -15,5 +15,7 @@ import { RouterLink } from 'vue-router';
       </div>
     </div>
   </nav>
-  <RouterView />
+  <div class="container text-center">
+    <RouterView />
+  </div>
 </template>
