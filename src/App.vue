@@ -10,8 +10,9 @@ import { RouterLink } from 'vue-router';
         Vue3 Composition - Pokemon API
       </RouterLink>
       <div>
-        <RouterLink class="btn btn-outline-primary" to="/">Home</RouterLink>
-        <RouterLink class="btn btn-outline-primary" to="/pokemons">Pokemons</RouterLink>
+        <RouterLink class="btn btn-outline-primary me-2" to="/">Home</RouterLink>
+        <RouterLink class="btn btn-outline-primary me-2" to="/pokemons">Pokemons</RouterLink>
+        <RouterLink class="btn btn-outline-primary me-2" to="/favoritos">Favoritos</RouterLink>
       </div>
     </div>
   </nav>

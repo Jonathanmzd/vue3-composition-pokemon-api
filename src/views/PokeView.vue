@@ -1,11 +1,14 @@
 <script setup>
 import { useRoute, useRouter } from "vue-router";
 import { useGetData } from "../composables/getData";
+import {useFavoritosStore} from '@/store/favoritos.js'
 
 const { data, getData, loading, error } = useGetData()
 
 const route = useRoute()
 const router = useRouter()
+const useFavoritos = useFavoritosStore()
+const {add, findpoke} = useFavoritos
 
 const back = () => {
     router.push("/pokemons");
@@ -33,6 +36,7 @@ getData(`https://pokeapi.co/api/v2/pokemon/${route.params.name}`);
         <div v-if="data">
             <img :src="data.sprites?.front_default" alt="" />
             <h1>Poke: {{ $route.params.name }}</h1>
+            <button class="btn btn-outline-primary mb-2" @click="add(data)" :disabled="findpoke(data.name)">Agregar Favoritos</button>
         </div>
         <button class="btn btn-outline-primary" @click="back()">Volver al listado</button>
     </main>
